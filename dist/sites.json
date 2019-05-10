@@ -1,0 +1,328 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -79.0703253,
+            43.2625544
+          ]
+        },
+        "properties": {
+          "Site ID": "0421964005",
+          "Station Name": "NIAGARA RIVER AT MOUTH AT FORT NIAGARA NY",
+          "cat": "ST",
+          "lat": "43.2625544",
+          "lng": "-79.0703253",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.7154167,
+            43.31380556
+          ]
+        },
+        "properties": {
+          "Site ID": "04219768",
+          "Station Name": "EIGHTEENMILE CREEK AT BURT NY",
+          "cat": "ST",
+          "lat": "43.31380556",
+          "lng": "-78.7154167",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.1912028,
+            43.3531111
+          ]
+        },
+        "properties": {
+          "Site ID": "0422018605",
+          "Station Name": "MARSH CREEK AT MOUTH AT THE BRIDGES NY",
+          "cat": "ST",
+          "lat": "43.3531111",
+          "lng": "-78.1912028",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.70575,
+            43.30719444
+          ]
+        },
+        "properties": {
+          "Site ID": "04220259",
+          "Station Name": "LK ONTARIO (BRADDOCK BAY) AT BRADDOCK HEIGHTS NY",
+          "cat": "LK",
+          "lat": "43.30719444",
+          "lng": "-77.70575",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.5338611,
+            43.23488889
+          ]
+        },
+        "properties": {
+          "Site ID": "0423205040",
+          "Station Name": "IRONDEQUOIT BAY AT MOUTH AT ROCHESTER NY",
+          "cat": "ST",
+          "lat": "43.23488889",
+          "lng": "-77.5338611",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.9745556,
+            43.27305556
+          ]
+        },
+        "properties": {
+          "Site ID": "0423207760",
+          "Station Name": "LAKE ONTARIO AT SODUS POINT NY",
+          "cat": "LK",
+          "lat": "43.27305556",
+          "lng": "-76.9745556",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.6984167,
+            43.34325
+          ]
+        },
+        "properties": {
+          "Site ID": "04232133",
+          "Station Name": "STERLING CREEK AT MOUTH AT NORTH FAIR HAVEN NY",
+          "cat": "ST",
+          "lat": "43.34325",
+          "lng": "-76.6984167",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.1941111,
+            43.63088889
+          ]
+        },
+        "properties": {
+          "Site ID": "04250516",
+          "Station Name": "SOUTH POND OUTLET AT SANDY POND NY",
+          "cat": "ST",
+          "lat": "43.63088889",
+          "lng": "-76.1941111",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.07825,
+            44.00402778
+          ]
+        },
+        "properties": {
+          "Site ID": "04260535",
+          "Station Name": "PERCH RIVER NEAR DEXTER NY",
+          "cat": "ST",
+          "lat": "44.00402778",
+          "lng": "-76.07825",
+          "agc": "USGS",
+          "type": "RDG"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.4864167,
+            43.37527778
+          ]
+        },
+        "properties": {
+          "Site ID": "04219796",
+          "Station Name": "LAKE ONTARIO (THIRTYMILE PT) AT GOLDEN HILL SP NY",
+          "cat": "LK",
+          "lat": "43.37527778",
+          "lng": "-78.4864167",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.9242806,
+            43.35744167
+          ]
+        },
+        "properties": {
+          "Site ID": "04220209",
+          "Station Name": "LK ONTARIO AT HAMLIN BEACH ST PARK NR N HAMLIN NY",
+          "cat": "LK",
+          "lat": "43.35744167",
+          "lng": "-77.9242806",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.7277861,
+            43.31532778
+          ]
+        },
+        "properties": {
+          "Site ID": "04220253",
+          "Station Name": "LAKE ONTARIO AT BRADDOCK HEIGHTS NY",
+          "cat": "LK",
+          "lat": "43.31532778",
+          "lng": "-77.7277861",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.43416389,
+            43.26675278
+          ]
+        },
+        "properties": {
+          "Site ID": "0423205342",
+          "Station Name": "LAKE ONTARIO AT NINMILE POINT NEAR WEBSTER NY",
+          "cat": "LK",
+          "lat": "43.26675278",
+          "lng": "-77.43416389",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.9745556,
+            43.27305556
+          ]
+        },
+        "properties": {
+          "Site ID": "0423207760",
+          "Station Name": "LAKE ONTARIO AT SODUS POINT NY",
+          "cat": "LK",
+          "lat": "43.27305556",
+          "lng": "-76.9745556",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.7089444,
+            43.35031667
+          ]
+        },
+        "properties": {
+          "Site ID": "04232093",
+          "Station Name": "LK ONTARIO AT BREAKWATER LIGHT 2 NR FAIR HAVEN NY",
+          "cat": "LK",
+          "lat": "43.35031667",
+          "lng": "-76.7089444",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.2136667,
+            43.55277778
+          ]
+        },
+        "properties": {
+          "Site ID": "04249071",
+          "Station Name": "LK ONTARIO (SELKIRK SHORES) NR DAYSVILLE CORNER NY",
+          "cat": "LK",
+          "lat": "43.55277778",
+          "lng": "-76.2136667",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -76.1327806,
+            43.947075
+          ]
+        },
+        "properties": {
+          "Site ID": "04250772",
+          "Station Name": "LAKE ONTARIO AT PIER AT SACKETS HARBOR NY",
+          "cat": "LK",
+          "lat": "43.947075",
+          "lng": "-76.1327806",
+          "agc": "USGS",
+          "type": "Permanant"
+        }
+      }
+    ]
+  }

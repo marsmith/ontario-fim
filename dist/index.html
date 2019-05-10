@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="Martyn Smith - USGS NY WSC">
+	<link rel="copyright" href="license.txt">
+    <title>Ontario FIM Viewer</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script type="text/javascript" src="vendors.615950509d82e2262d7a.js"></script><script type="text/javascript" src="main.9e59cbae8f0d93cf20c0.js"></script></head>
+  <body>
+    
+    <div id="top-menu">
+        <div id="mobile-main-menu">
+            <span class="fa fa-bars" ></span>
+        </div>
+        <div class="title">
+            <a class='top-menu-brand hidden-xs' href="https://www.usgs.gov"><img src="images/logo.png"></a>
+            <span class="app-name">Ontario FIM Viewer (DRAFT)</span><span class="app-name-mobile">Ontario FIM Viewer (DRAFT)</span> 
+        </div>
+
+        <button id="aboutButton" class="btn btn-default top-menu-btn pull-right">
+            <i class="fa fa-info"></i><span class="d-none d-sm-inline">&nbsp;&nbsp;About</span>
+        </button>
+    </div>
+
+    <div id="main-menu">
+        <div class="main-menu-container scrollable">
+            <div class="menu-content"> 
+                <div class="scrollable-content">
+
+                    <div class="accordion" id="accordion">
+                        <div class="card mb-0 sidebar-panel">
+
+                            
+                            <div class="alert alert-primary disclaimer" role="alert">
+                                    These data are preliminary or provisional and are subject to revision. They are being provided to meet the need for timely best science. The data have not received final approval by the U.S. Geological Survey (USGS) and are provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the data.
+                            </div>
+
+                            <div class="card-header" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" href="#layersPanel">
+                                <a class="card-title" >
+                                    Map Layers
+                                </a>
+                            </div>
+                            <div id="layersPanel" class="card-body collapse show" data-parent="#accordion">
+                                <div class="card mb-2">
+                                    <h5 class="card-title mr-2 mt-2">USGS Gages</h5>
+                                    <div id="legend" class="card-body"></div>
+                                </div>   
+
+                                <div class="card">
+                                    <h5 class="card-title mr-2 mt-2">Toggle Depth Layers</h5>
+                                    <div id="baseLayerToggles" class="card-body"></div>
+                                </div>       
+                            </div>
+   
+                            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#basemapsPanel">
+                                <a class="card-title" >
+                                    Basemaps
+                                </a>
+                            </div>
+                            <div id="basemapsPanel" class="card-body collapse" data-parent="#accordion">
+      
+                                    <button id="btnStreets" class="btn btn-default slick-btn basemapBtn equalize"><img class="basemapThumb" alt="" src="images/streets.jpg"><br class="basemapThumb">Streets</button>
+                                    <button id="btnSatellite" class="btn btn-default slick-btn basemapBtn equalize" ><img class="basemapThumb" alt="" src="images/imagery.jpg"><br class="basemapThumb">Imagery</button>
+                                    <button id="btnImageryClarity" class="btn btn-default slick-btn basemapBtn equalize slick-btn-selection" ><img class="basemapThumb" alt="" src="images/imagery_clarity.jpg"><br class="basemapThumb">Imagery Clarity</button>
+                                    <button id="btnTopo" class="btn btn-default slick-btn basemapBtn equalize"><img class="basemapThumb" alt="" src="images/topo.jpg"><br class="basemapThumb">Topo</button>
+                                    <button id="btnTerrain" class="btn btn-default slick-btn basemapBtn equalize"><img class="basemapThumb" alt="" src="images/terrain.jpg"><br class="basemapThumb">Terrain</button>
+                                    <button id="btnGray" class="btn btn-default slick-btn basemapBtn equalize" ><img class="basemapThumb" alt="" src="images/gray.jpg"><br class="basemapThumb">Gray</button>
+                                    <button id="btnDarkGray" class="btn btn-default slick-btn basemapBtn equalize" ><img class="basemapThumb" alt="" src="images/darkgray.jpg"><br class="basemapThumb">DarkGray</button>
+                                    <button id="btnNatGeo" class="btn btn-default slick-btn basemapBtn equalize"><img class="basemapThumb" alt="" src="images/natgeo.jpg"><br class="basemapThumb">NatGeo</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="main-menu-footer">
+                        <div id="info" class="identification">Developed by USGS NY WSC</div>
+
+                        <div class="footer-links">
+                            <!-- footer nav links -->
+                            <a href="https://www.doi.gov/privacy">DOI Privacy Policy</a>
+                            <a href="https://www.usgs.gov/laws/policies_notices.html">Legal</a>
+                            <a href="https://www2.usgs.gov/laws/accessibility.html">Accessibility</a>
+                            <a href="https://www.usgs.gov/sitemap.html">Site Map</a>
+                            <a href="https://answers.usgs.gov/">Contact USGS</a>
+                            <!--/ footer nav links -->      
+                        </div>
+    
+                        <div class="footer-links">
+                            <!-- footer nav links -->
+                            <a href="https://www.doi.gov/">U.S. Department of the Interior</a>
+                            <a href="https://www.doioig.gov/">DOI Inspector General</a>
+                            <a href="https://www.whitehouse.gov/">White House</a>
+                            <a href="https://www.whitehouse.gov/omb/management/egov/">E-gov</a>
+                            <a href="https://www.doi.gov/pmb/eeo/no-fear-act">No Fear Act</a>
+                            <a href="https://www2.usgs.gov/foia">FOIA</a>
+                            <!--/ footer nav links -->      
+                        </div>
+    
+                        <!-- .footer-social-links -->
+                        <div class="footer-icons">
+                            <a href="https://twitter.com/usgs" target="_blank">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a href="https://facebook.com/usgeologicalsurvey" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a href="https://plus.google.com/112624925658443863798/posts" target="_blank">
+                                <i class="fab fa-google-plus-square"></i>
+                            </a>
+                            <a href="https://github.com/usgs" target="_blank">
+                                <i class="fab fa-github-square"></i>
+                            </a>
+                            <a href="https://flickr.com/usgeologicalsurvey" target="_blank">
+                                <i class="fab fa-flickr"></i>
+                            </a>
+                            <a href="http://youtube.com/usgs" target="_blank">
+                                <i class="fab fa-youtube-square"></i>
+                            </a>
+                            <a href="https://instagram.com/usgs" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="aboutModal" class="modal fade"  tabindex="-1" role="dialog" >
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ontario FIM Viewer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="aboutModalBody" class="modal-body">
+                        <ul class="nav nav-tabs" id="aboutModalTabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="aboutTab" href="#aboutTabPane" data-toggle="tab" role="tab"><i class="fa fa-question-circle"></i>&nbsp;About the application</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="disclaimerTab" href="#disclaimerTabPane" data-toggle="tab" role="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Disclaimer</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="aboutTabPane"><br>
+
+                                <p><b>Objective and Scope</b> – The objective of this project is to produce a library of flood-inundation maps (FIMs) at half-foot increments of elevation that would span 245 to 250 feet (North American Vertical Datum of 1988; NAVD 88) or the range in elevation from the year-round average water level to a water level that exceeds the 2017 peak (by almost one foot). FIMs would be divided into shoreline segments extending approximately half-way to the adjacent lake gages and would be tied to the water-surface elevation as recorded by the lake gage located mid-way within a given segment.</p>
+
+                                <p><b>Relevance and Benefits</b> – This project will support the USGS Mission Areas of Water and Natural Hazards and will meet the USGS goals of (1) providing water-resources and hazards information that will be used by multiple parties (Federal and State) for planning and operational purposes and will contribute to protection of life and property, and (2) contributing data to national data bases that will be used to advance the understanding of regional and temporal variations in hydrologic conditions. Project data will also be used to support the ongoing efforts under Annex 4 of the Great Lakes Water Quality Agreement (GLWQA).</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="disclaimerTabPane"><br>
+                                <h4>USGS Software User Rights Notice</h4>
+                                <p>Software and related material (data and (or) documentation), contained in or furnished in connection with a software distribution, are made available by the U.S. Geological Survey (USGS) to be used in the public interest and in the advancement of science, subject to the following restrictions and understandings.</p>
+                                  
+                                <p>Because the software and related material are free and provided "as is," the authors, the USGS, and the United States Government have made no warranty, express or implied, as to accuracy or completeness and are not obligated to provide the user with any support, consulting, training or assistance of any kind with regard to the use, operation, and performance of this software nor to provide the user with any updates, revisions, new versions or "bug fixes".</p>
+                                  
+                                <p>The user assumes all risk for any damages whatsoever resulting from loss of use, data, or profits arising in connection with the access, use, quality, or performance of this software.</p>	
+
+                                <p>Developed by <a href="https://www.usgs.gov/staff-profiles/martyn-smith">Martyn Smith</a> of the <a href="https://ny.water.usgs.gov">NY WSC</a>.<br><br>
+             
+                                <span id="appVersion"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div> <!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+    <div id="mapDiv">
+    </div>
+
+  </body>
+</html>
