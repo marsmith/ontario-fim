@@ -62,7 +62,7 @@ var visibleLayers = [];
 var siteList = [];
 
 var mapServerDetails =  {
-  "url": "https://gis.usgs.gov/sciencebase2/rest/services/Catalog/5abc2a54e4b081f61abe2f73/MapServer",
+  "url": "https://gis.usgs.gov/sciencebase2/rest/services/Catalog/5a7c9047e4b00f54eb231ae9/MapServer",
   //"url": "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/NyOntario/NyOntario/MapServer",
 	//"layers": [0,1,2,3,4,5,6,7,8,9,10,11,12,13], 
 	"visible": false, 
@@ -171,13 +171,13 @@ $(document).ready(function () {
       theMap.addLayer(mapServer);
       
       //if this is a depth grid layer we just turned on, enable querying
-      if (divID.indexOf('DepthGrid') !== -1) {
+      if (divID.indexOf('segment') !== -1) {
 
         $('.leaflet-container').css('cursor','crosshair');
 
         //turn on click listener
         theMap.on('click', function(e) {        
-          console.log("MAP CLICK",e,layerID); 
+          //console.log("MAP CLICK",e,layerID); 
           queryRaster(e.latlng, layerID)  ;   
         });
       }
@@ -202,7 +202,20 @@ function queryRaster(point,layerID) {
   .run(function(error, featureCollection, response){
       console.log("identify response:", featureCollection,response);
 
-      var popupContent = '<b>Layer queried: </b>' + response.results[0].layerName + '<br><b>Value: </b>' + (featureCollection.features[0].properties['Pixel Value']/100).toFixed(1) + ' feet';
+      var popupContent = '';
+
+      if (featureCollection.features.length > 0 && featureCollection.features[0].properties['Pixel Value'] !== 'NaN') {
+
+        var lNameItems = response.results[0].layerName.split('_');
+        var lName = 'Depth ' + (lNameItems[1]/100).toFixed(1) + ' Feet';
+
+        popupContent += '<b>Layer queried: </b>' + lName + '<br><b>Value: </b>' + (featureCollection.features[0].properties['Pixel Value']/100).toFixed(1) + ' feet';
+      }
+
+      else {
+        popupContent += '<b>Value: </b>Not Found';
+      }
+
       var classString = 'wmm-pin wmm-orange wmm-icon-noicon wmm-icon-white wmm-size-25';
       var icon = L.divIcon({ className: classString });
       var marker = L.marker(point, { icon: icon });
@@ -214,6 +227,7 @@ function queryRaster(point,layerID) {
 
       marker.bindPopup(popupContent);
       queryLayer.addLayer(marker);
+      
   });
 }
 
@@ -369,21 +383,31 @@ function parseBaseLayers() {
 
 function addMapLayer(mapServer, mapServerDetails) {
 
+  $('#baseLayerToggles').append('<div class="alert alert-secondary" role="alert">Depth layers are grouped by correlated USGS gage.  Click the Site ID below to expand a list of depth layers.  Individual depth layers can be selected and queried by clicking on the map</div>');
+
   $.getJSON(layersURL, function (layerResponse) {
 
     $.getJSON(legendURL, function (legendResponse) {
+
+      console.log('legend response:',legendResponse,'layer response:',layerResponse);
+
+      var toggleGroup = '';
+      var previousParent = '';
+      var $groupContent;
 
       $.each(layerResponse.layers, function (iLayer,layerValue) {
 
         //add as a group heading
         if (layerValue.type === 'Group Layer') {
           console.log('Found a group layer:',layerValue);
-          $('#baseLayerToggles').append('<b style="font-size:12px" class="ml-2"> ' + layerValue.name + '</b>');
+          var lName = layerValue.name.split('_').join(' ');
+          
+          $('#baseLayerToggles').append('<h5 class="card-title groupLayerToggle" data-toggle="collapse" data-target="#' + layerValue.name + '"> ' + lName + '</h5><div id="' + layerValue.name + '" class="collapse"></div>');
         }
 
         //add as a regular layer
         else {
-          console.log('legend response:',legendResponse,iLayer, legendResponse.layers[iLayer])
+          //console.log('legend response:',legendResponse,iLayer, legendResponse.layers[iLayer])
 
           //get legend swatch
           $.each(legendResponse.layers, function (index,legendValue) {
@@ -391,13 +415,28 @@ function addMapLayer(mapServer, mapServerDetails) {
             if (legendValue.layerId === iLayer) {
               //var legendValue = legendResponse.layers[iLayer];
                 
-              console.log('Adding map layer to legend:',legendValue);
+              //console.log('Adding map layer to legend:',legendValue);
 
               if (layerValue.parentLayer) {
 
+                //console.log('PARENT',layerValue.name,previousParent,layerValue.parentLayer.name);
+
+                //we have a new parent
+                if (previousParent !== layerValue.parentLayer.name) {
+                  //$('#baseLayerToggles').append($groupContent);
+                }
+
+                previousParent = layerValue.parentLayer.name;
+
+                
+
+
                 if (legendValue.legend.length > 1) {
+
+                  var lNameItems = legendValue.layerName.split('_');
+                  var lName = lNameItems[0] + ' ' + (lNameItems[1]/100).toFixed(1) + ' Feet';
                   
-                  var $legendContent = $('<div/>').html('<div class="ml-2"><button id="' + camelize('l' + legendValue.layerName) + '" class="btn btn-default slick-btn mapLayerBtn equalize layerToggle" value="' + legendValue.layerId + '">' + legendValue.layerName);
+                  var $legendContent = $('<div/>').html('<div class="ml-2"><button id="' + camelize('l' + legendValue.layerName) + '" class="btn btn-default slick-btn mapLayerBtn equalize layerToggle" value="' + legendValue.layerId + '">' + lName);
 
                   $.each(legendValue.legend, function (index,legendItem) {
                     if (legendItem.label !== '-3,460 - 0') {
@@ -410,14 +449,15 @@ function addMapLayer(mapServer, mapServerDetails) {
                       }
                       var value2 = values[1]/100;
     
-                      console.log('parsing',desc,values);
+                      //console.log('parsing',desc,values);
                       $($legendContent).append('<div class="ml-4 rasterLegend"><img alt="Legend Swatch" src="data:image/png;base64,' + legendItem.imageData + '" /><span class="ml-2">' + value1 + ' to ' + value2 + ' Feet</span></div>');
                     }
                   });
 
                   $($legendContent).append('</button></div>');
 
-                  $('#baseLayerToggles').append($legendContent);
+                  //console.log('CHECK DIV:', '#' + layerValue.parentLayer.name)
+                  $('#' + layerValue.parentLayer.name).append($legendContent);
 
                 }
 
@@ -435,6 +475,14 @@ function addMapLayer(mapServer, mapServerDetails) {
 
           });
         }
+      });
+
+      //activate group toggling
+      $('[data-toggle="collapse"]').click(function(e){
+        e.preventDefault();
+        var target_element= $(this).attr("data-target");
+        $(target_element).collapse('toggle');
+        return false;
       });
 
 

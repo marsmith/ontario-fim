@@ -22,6 +22,11 @@
   z-index:9999 !important;
 }
 
+.groupLayerToggle:hover {
+  cursor: pointer;
+}
+  
+
 /*
     ===========================
     ===========================
